@@ -2,7 +2,7 @@ let currentLang = localStorage.getItem("lang") || "en";
 
 const translations = {
   en: {
-    title: "GCP Associate Cloud Engineer",
+    title: "GCP Associate Cloud Engineer 🤓👆",
     subtitle: "Select a mode to begin:",
     studyMode: "Study Mode",
     practiceMode: "Practice Mode",
@@ -20,7 +20,7 @@ const translations = {
     toMenuInline: "← Back to Menu",
   },
   es: {
-    title: "GCP Associate Cloud Engineer",
+    title: "GCP Associate Cloud Engineer 🤓👆",
     subtitle: "Selecciona un modo para comenzar:",
     studyMode: "Modo Estudio",
     practiceMode: "Modo Práctica",
