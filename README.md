@@ -1,7 +1,9 @@
 #  GCP Associate Cloud Engineer – Practice App
 
-A simple mobile-friendly, dark-themed web application to help you prepare for the **Google Cloud Associate Cloud Engineer certification**. Practice in study or exam mode, track your results, and learn as you go.
+A simple mobile-friendly, dark-themed web application to help you prepare for the **Google Cloud Associate Cloud Engineer certification** using questions sourced from **ExamTopics**. Practice in study or exam mode, track your results, and learn as you go.
 
+🌐 **Live Demo:**  
+[https://israelsz.github.io/gcp-ace-practice-app/](https://israelsz.github.io/gcp-ace-practice-app/)
 
 ## 🚀 Features
 
