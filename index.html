@@ -3,30 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GCP ACE - Práctica</title>
+  <title>GCP ACE - Practice App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+ 
   <!-- Pantalla de inicio -->
   <section id="inicio">
-    <h1>GCP Associate Cloud Engineer 🤓👆</h1>
-    <p>Selecciona un modo para comenzar:</p>
+    <!-- Selector de idioma -->
+    <div id="language-switch">
+        <button data-lang="en">EN</button>
+        <button data-lang="es">ES</button>
+    </div>
+    
+    <h1 id="title">GCP Associate Cloud Engineer</h1>
+    <p id="subtitle">Select a mode to begin:</p>
     <div class="modo-botones">
-      <button id="modo-estudio">Modo Estudio</button>
-      <button id="modo-practica" class="btn-azul">Modo Práctica</button>
+      <button id="modo-estudio">Study Mode</button>
+      <button id="modo-practica" class="btn-azul">Practice Mode</button>
     </div>
   </section>
 
   <!-- Selector de cantidad de preguntas (modo práctica) -->
   <section id="selector-practica" class="oculto">
-    <h2>¿Cuántas preguntas quieres practicar?</h2>
+    <h2 id="select-amount-title">How many questions do you want to practice?</h2>
     <div class="modo-botones">
       <button class="cantidad-practica" data-cantidad="15">15</button>
       <button class="cantidad-practica" data-cantidad="30">30</button>
       <button class="cantidad-practica" data-cantidad="60">60</button>
     </div>
     <div class="volver-practica">
-      <button id="volver-inicio" class="btn-volver">← Volver</button>
+      <button id="volver-inicio" class="btn-volver">← Back</button>
     </div>
   </section>
 
@@ -34,11 +41,12 @@
   <main id="main-app" class="oculto">
     <div id="pregunta-container"></div>
     <div id="navegacion">
-      <button id="anterior">← Anterior</button>
-      <button id="siguiente">Siguiente →</button>
+      <button id="anterior">← Previous</button>
+      <button id="siguiente">Next →</button>
     </div>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
+

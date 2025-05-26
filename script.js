@@ -1,3 +1,64 @@
+let currentLang = localStorage.getItem("lang") || "en";
+
+const translations = {
+  en: {
+    title: "GCP Associate Cloud Engineer",
+    subtitle: "Select a mode to begin:",
+    studyMode: "Study Mode",
+    practiceMode: "Practice Mode",
+    selectAmount: "How many questions do you want to practice?",
+    back: "← Back",
+    question: "Question",
+    next: "Next →",
+    previous: "← Previous",
+    summaryTitle: "Session Summary",
+    correct: "✔️ Correct",
+    incorrect: "❌ Incorrect",
+    toMenu: "Back to Menu",
+    review: "Review Answers",
+    mustAnswer: "You must answer this question before continuing.",
+    toMenuInline: "← Back to Menu",
+  },
+  es: {
+    title: "GCP Associate Cloud Engineer",
+    subtitle: "Selecciona un modo para comenzar:",
+    studyMode: "Modo Estudio",
+    practiceMode: "Modo Práctica",
+    selectAmount: "¿Cuántas preguntas quieres practicar?",
+    back: "← Volver",
+    question: "Pregunta",
+    next: "Siguiente →",
+    previous: "← Anterior",
+    summaryTitle: "Resumen del intento",
+    correct: "✔️ Correctas",
+    incorrect: "❌ Incorrectas",
+    toMenu: "Volver al menú",
+    review: "Revisar respuestas",
+    mustAnswer: "Debes responder esta pregunta antes de continuar.",
+    toMenuInline: "← Volver al menú",
+  }
+};
+
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem("lang", lang);
+
+  const t = translations[lang];
+  document.getElementById("title").textContent = t.title;
+  document.getElementById("subtitle").textContent = t.subtitle;
+  document.getElementById("modo-estudio").textContent = t.studyMode;
+  document.getElementById("modo-practica").textContent = t.practiceMode;
+  document.getElementById("select-amount-title").textContent = t.selectAmount;
+  document.getElementById("volver-inicio").textContent = t.back;
+  document.getElementById("anterior").textContent = t.previous;
+  document.getElementById("siguiente").textContent = t.next;
+
+  if (modo === "practica" && enRevision) {
+    mostrarPregunta(); // actualizar etiquetas durante revision
+  }
+}
+
+
 let preguntas = [];
 let indiceActual = 0;
 let modo = "estudio";
@@ -91,8 +152,8 @@ function mostrarPregunta() {
   contenedor.innerHTML = `
     <div class="pregunta">
       <div class="pregunta-header">
-        <h2>Pregunta ${indiceActual + 1} de ${preguntas.length}</h2>
-        <button class="btn-volver-inline" onclick="volverAlMenu()">← Ir al menú</button>
+        <h2>${translations[currentLang].question} ${indiceActual + 1} / ${preguntas.length}</h2>
+        <button class="btn-volver-inline" onclick="volverAlMenu()">${translations[currentLang].toMenuInline}</button>
       </div>
       <p>${pregunta.text}</p>
       <div class="opciones">
@@ -163,11 +224,11 @@ function mostrarResumen() {
 
   contenedor.innerHTML = `
     <div class="resumen">
-      <h2>Resumen del intento</h2>
-      <p>✔️ Correctas: ${correctas}</p>
-      <p>❌ Incorrectas: ${total - correctas}</p>
-      <button onclick="reiniciar()">Volver al menú</button>
-      <button onclick="verRevisar()">Revisar respuestas</button>
+      <h2>${translations[currentLang].summaryTitle}</h2>
+      <p>${translations[currentLang].correct}: ${correctas}</p>
+      <p>${translations[currentLang].incorrect}: ${total - correctas}</p>
+      <button onclick="reiniciar()">${translations[currentLang].toMenu}</button>
+      <button onclick="verRevisar()">${translations[currentLang].review}</button>
     </div>
   `;
 
@@ -185,3 +246,12 @@ function verRevisar() {
   document.getElementById("navegacion").style.display = "flex";
   mostrarPregunta();
 }
+
+document.querySelectorAll('#language-switch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setLanguage(btn.dataset.lang);
+    });
+  });
+  
+  setLanguage(currentLang); // inicializar idioma al cargar
+  

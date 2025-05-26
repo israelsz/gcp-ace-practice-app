@@ -191,4 +191,30 @@ body {
       padding: 0.8rem;
     }
   }
+
+  #language-switch {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 1000;
+  }
+  
+  #language-switch button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: background-color 0.3s, opacity 0.3s;
+  }
+  
+  #language-switch button:hover {
+    background-color: #555;
+    opacity: 1;
+  }
   
