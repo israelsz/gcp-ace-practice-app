@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GCP ACE - Práctica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Pantalla de inicio -->
+  <section id="inicio">
+    <h1>GCP Associate Cloud Engineer 🤓👆</h1>
+    <p>Selecciona un modo para comenzar:</p>
+    <div class="modo-botones">
+      <button id="modo-estudio">Modo Estudio</button>
+      <button id="modo-practica" class="btn-azul">Modo Práctica</button>
+    </div>
+  </section>
+
+  <!-- Selector de cantidad de preguntas (modo práctica) -->
+  <section id="selector-practica" class="oculto">
+    <h2>¿Cuántas preguntas quieres practicar?</h2>
+    <div class="modo-botones">
+      <button class="cantidad-practica" data-cantidad="15">15</button>
+      <button class="cantidad-practica" data-cantidad="30">30</button>
+      <button class="cantidad-practica" data-cantidad="60">60</button>
+    </div>
+    <div class="volver-practica">
+      <button id="volver-inicio" class="btn-volver">← Volver</button>
+    </div>
+  </section>
+
+  <!-- Vista principal de preguntas -->
+  <main id="main-app" class="oculto">
+    <div id="pregunta-container"></div>
+    <div id="navegacion">
+      <button id="anterior">← Anterior</button>
+      <button id="siguiente">Siguiente →</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
